@@ -6,7 +6,7 @@
 ///           This program generates a list of all pairs of points
 ///           that lie within a user-specified cutoff distance.
 ///           This program uses a simple uniform binning algorithm.
-/// @author   Andrew Jewett
+/// @author   Andrew Jewett, Steve Plimpton
 /// @license  GPL-2.0
 ///
 /// @note  To change the number of dimensions in which the point cloud lives,
