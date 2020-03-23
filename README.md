@@ -49,7 +49,7 @@ i3 j3 1
 ```
 Here "i" and "j" refer to the ID numbers of two different particles
 that are nearby each other (separated by a distance of less than "rmax").
-*(The 3rd column ("1") is useful when computing contact frequency
+*(The 3rd column ("1") is only useful when computing contact frequency
   from multiple different point clouds.  See below.)
 
 ### Multiple point clouds (trajectories"):
