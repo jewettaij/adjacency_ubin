@@ -10,7 +10,7 @@ cutoff distance. This program uses a simple uniform binning algorithm.
 ## Typical Usage:
 
 ```
-adjacency_ubuin -r rmax [optional arguments..] < coordinate_file > matrix_file
+adjacency_ubin -r rmax [optional arguments..] < coordinate_file > matrix_file
 ```
 
 This simple program reads a file containing X Y Z coordinates of a list of

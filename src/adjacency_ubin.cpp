@@ -171,17 +171,17 @@ ParseArgs(int argc,
     "  where \"i\" and \"j\" refer to monomers in the structure(s), and\n"
     "  \"count\" refers to the number of times those two monomers were found\n"
     "  to be in contact with eachother in this structure(s).\n"
-    "    (\"in contact\" <--> to be spatially separated by a distance <= dthresh)\n"
+    "    (\"in contact\" <--> to be spatially separated by a distance <= rcut)\n"
     "\n"
     "Typical Usage:\n"
     "\n"
     "\n"
-    <<"  "<< g_program_name<<" -d dthresh [optional arguments..] < coordinate_file > matrix_file\n"
+    <<"  "<< g_program_name<<" -r rcut [optional arguments..] < coordinate_file > matrix_file\n"
     "\n"
     "\n"
     "Optional arguments:\n"
     "\n"
-    "  -d dthresh   <- specify the threshold contact distance (1.5 by default).\n"
+    "  -r rcut   <- specify the threshold contact distance (1.5 by default).\n"
     "\n"
     "  -raw         <-The default input file format: 3-column space-\n"
     "                 delimited text file with blank lines separating frames.\n"
@@ -210,7 +210,7 @@ ParseArgs(int argc,
       }
       else if ((strcmp(argv[which_arg], "-r") == 0) ||
 	       (strcmp(argv[which_arg], "-d") == 0) ||
-	       (strcmp(argv[which_arg], "-dthresh") == 0))
+	       (strcmp(argv[which_arg], "-rcut") == 0))
       {
         if (which_arg+1 == argc) { 
           stringstream errmsg;
