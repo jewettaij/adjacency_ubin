@@ -105,7 +105,7 @@ CalcAdjacency(map<pair<Iatm,Iatm>,long>& m,
 
       while (ja >= 0)
       {
-        if (DistanceSqd(aaX[ia], aaX[ja]) < rcutsq)
+        if ((DistanceSqd(aaX[ia], aaX[ja]) < rcutsq) && (ja > ia))
           m[ pair<Iatm,Iatm>(ia, ja) ] = 1;
         ja = bins.aNextFromIatm[ja];
       }
