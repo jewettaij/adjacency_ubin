@@ -30,8 +30,8 @@ using namespace std;
 
 // global variables
 const char g_program_name[]   = "adjacency_ubin";
-const char g_version_string[] = "0.3.1";
-const char g_date_string[]    = "<2020-3-23>";
+const char g_version_string[] = "0.4.0";
+const char g_date_string[]    = "<2020-4-19>";
 
 
 
@@ -327,6 +327,9 @@ main(int argc, char **argv)
       else
         assert(0);
 
+      if (num_atoms > 0)
+        cerr << "    finished reading frame " << frame_counter+1 << endl;
+
       // We could be at a point in the file with trailing whitespace.  Check
       // to make sure that we did actually read something before we continue.
 
@@ -389,6 +392,7 @@ main(int argc, char **argv)
 
     if (frame_counter > 0) {
       // Now print the total adjacency matrix
+      cerr << "  Printing adjacency matrix" << endl;
       PrintAdjacency(m_tot, cout);
     }
 
