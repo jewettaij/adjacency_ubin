@@ -1,6 +1,6 @@
 # compiled binaries
 *.so *.o
-adjacency
+adjacency_ubin
 
 # text-editor temporary files:
 *~
