@@ -164,7 +164,6 @@ class Bins {
       size = aNbins[d];
       next_ib  = ib / size;
       aIcrd[d] = ib % size;  
-      //aIcrd[d] = ib - size*next_ib;  alternate version
 
       assert((0 <= aIcrd[d]) && (aIcrd[d] < aNbins[d]));
       ib = next_ib;

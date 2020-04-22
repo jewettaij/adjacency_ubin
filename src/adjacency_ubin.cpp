@@ -74,6 +74,7 @@ void PrintAdjacency(const map<pair<Iatm,Iatm>,long>& m,
 
 
 
+// THIS FUNCTION IS INEFFICIENT.  I SHOULD REWRITE IT
 void 
 CalcAdjacency(map<pair<Iatm,Iatm>,long>& m,
               ConstVect *aaX,  // <--> equivalent to "double (*x)[g_dim],"
@@ -270,12 +271,10 @@ ParseArgs(int argc,
   catch (ArgParseErr& e)
   {
     cerr << "--------------------------------------------------\n";
-    cerr << "--------------------------------------------------\n";
     cerr << "       Error in argument list: \n" << e.what() << endl;
     cerr << "--------------------------------------------------\n";
-    cerr << "--------------------------------------------------\n";
     cerr << "\n";
-    cerr << explanation.str() << endl;
+    //cerr << explanation.str() << endl;
     exit(-1);
   }
 

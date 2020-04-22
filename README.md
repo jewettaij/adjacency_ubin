@@ -7,6 +7,12 @@ Generate a (sparse) adjacency matrix for a point cloud.  This program
 generates a list of all pairs of points that lie within a user-specified
 cutoff distance. This program uses a simple uniform binning algorithm.
 
+### *Note: This repository may be removed later*
+*In the future, this repository may be
+ removed or absorbed into a different project.
+Some of the moltemplate examples require this program to verify that they are
+working correctly. So I decided to make this (ugly, inefficient) code public.*
+
 ## Typical Usage:
 
 ```
@@ -182,6 +188,7 @@ and then follow the instructions above.
 
 This program was quickly written has only tested on a few point clouds.
 Some of the arguments documented above may not yet work.
+Not much thought was given to making the code run quickly.
 
 
 ## License
