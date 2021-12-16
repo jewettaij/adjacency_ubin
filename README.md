@@ -13,6 +13,13 @@ cutoff distance. This program uses a simple uniform binning algorithm.
 Some of the moltemplate examples require this program to verify that they are
 working correctly. So I decided to make this (ugly, inefficient) code public.*
 
+The number of dimensions of the point cloud is 3 by default.
+It can be altered at compile time by changing the *G_DIM* parameter
+*[as explaind below](#Changing-the-number-of-dimensions)*.
+
+*(Note: This program has not been optimized for speed or memory efficiency,
+and it has not been tested in dimensions other than 3. -A 2021-12-01)*
+
 ## Typical Usage:
 
 ```
@@ -126,17 +133,21 @@ those two particles were found to be nearby each other
                  (RAW format is assumed by default.)
   -xyz         <-Instead, assume the input coordinate file uses ".xyz" format.
                  (This feature is not well tested.  Hopefully it works.)
-  -bins N      <-Specify the number of bins
-                 Alternatley, you can specify 3 numbers (nx ny nz)
-                 if you want it to vary in different directions.
-                 Binning is only used to speed up the computation, so
-                 these numbers should not effect the result, as long as 
+  -bins nx ny nz  <-Specify the number of bins in the X,Y,Z directions
+                 used to lookup nearby points in the pointcloud.
+                 If left unspecified, a default choice will be made.
+                 Specifying the nx, ny, nz parameters manually can be useful
+                 if the program is consuming too much memory, or is too slow.
+                 Larger values of nx, ny, nz can reduce computation time
+                 but will dramatically increase the amount of memory used.
+                 Using a small number of bins will reduce memory usage.
+                 But spatial binning is only used to speed up the computation,
+                 so these numbers should not effect results as long as
                        (xmax-xmin)/nx >= rmax
                        (ymax-ymin)/ny >= rmax
                        (zmax-zmin)/nz >= rmax
                  where xmax, xmin, ymax, ymin, zmax, zmin are the maximum and
                  minimum coordinates in the input file.
-                 However using a small number of bins may reduce memory usage.
                  (NOTE: The "-bins" option has not been tested and may not work)
 ```
 
@@ -173,9 +184,9 @@ and other build tools using Xcode or brew.)*
 *(Note: If you receive an error regarding "omp" or "OpenMP", then use
 "setup_gcc_serial.sh" instead.  This may be necessary for apple users.)*
 
-### Windows 10:
+### Windows 10 or 11:
 
-Install HyperV (with linux), or the Windows Subsystem for Linux (WSL) and run
+Install the Windows Subsystem for Linux (WSL) and run
 
 ```
 sudo apt-get install build-essential

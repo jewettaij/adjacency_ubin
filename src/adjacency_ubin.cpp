@@ -1,7 +1,4 @@
 /// @file     adjacency_ubin.cpp
-/// @brief    Generate a (sparse) adjacency matrix for a point cloud which
-///           lists all pairs of points lie within a cutoff distance.
-///           This program uses a simple uniform binning algorithm.
 /// @brief    Generate a (sparse) adjacency matrix for a point cloud.
 ///           This program generates a list of all pairs of points
 ///           that lie within a user-specified cutoff distance.
